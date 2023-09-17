@@ -1,12 +1,7 @@
 import React from "react";
-import SidebarItem from "./SidebarItem";
+import SidebarItem from "./SidebarItem.jsx";
 
-function Sidebar() {
-  const cardImage = {
-    image1: "img/playlist01.png",
-    image2: "img/playlist02.png",
-    image3: "img/playlist03.png",
-  };
+function Sidebar({state}) {
   return (
     <div className="main__sidebar sidebar">
       <div className="sidebar__personal">
@@ -19,9 +14,9 @@ function Sidebar() {
       </div>
       <div className="sidebar__block">
         <div className="sidebar__list">
-            <SidebarItem cardImage={cardImage.image1} />
-            <SidebarItem cardImage={cardImage.image2} />
-            <SidebarItem cardImage={cardImage.image3} />
+          {state.cardImage.map((element) => {
+            return <SidebarItem key={element.id} src={element.src} />; //
+          })}
         </div>
       </div>
     </div>

@@ -4,16 +4,17 @@ import TrackList from "./components/TrackList";
 import Sidebar from "./components/Sidebar";
 import AudioPlayer from "./components/AudioPlayer";
 
-function App() {
+function App( {state} ) {
+  console.log(state);
   return (
     <div class="wrapper">
       <div class="container">
         <main class="main">
-          <NavMenu/>
-          <TrackList/>
-          <Sidebar/>
+          <NavMenu />
+          <TrackList />
+          <Sidebar  state={state}/>
         </main>
-          <AudioPlayer/>
+        <AudioPlayer />
       </div>
     </div>
   );
