@@ -1,7 +1,9 @@
 import React from "react";
 import SidebarItem from "./SidebarItem.jsx";
+import Skeleton from "./Skeleton.jsx";
 
-function Sidebar({state}) {
+
+function Sidebar({ state }) {
   return (
     <div className="main__sidebar sidebar">
       <div className="sidebar__personal">
@@ -15,7 +17,15 @@ function Sidebar({state}) {
       <div className="sidebar__block">
         <div className="sidebar__list">
           {state.cardImage.map((element) => {
-            return <SidebarItem key={element.id} src={element.src} />; //
+            return (
+              <Skeleton
+                className="sidebar__item"
+                width={250}
+                height={150}
+                key={element.id}
+                src={element.src}
+              />
+            ); //
           })}
         </div>
       </div>
