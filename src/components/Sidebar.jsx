@@ -18,7 +18,7 @@ function Sidebar({ state }) {
         <div className="sidebar__list">
           {state.cardImage.map((element) => {
             return (
-              // return <SidebarItem key={element.id} src={element.src} />;
+              // <SidebarItem key={element.id} src={element.src} />
               <Skeleton
                 className="sidebar__item"
                 width={250}
