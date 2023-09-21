@@ -881,3 +881,20 @@ body {
 .volume__progress-line {
   width: 109px;
 }
+
+
+.window {
+  display: flex;
+justify-content: center;
+align-items: center;
+gap: 24px;
+  display: inline-flex;
+padding: 34px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+border-radius: 12px;
+background: #313131;
+  overflow-y: auto; /* Автоматическое появление скролла при достижении максимальной высоты */
+
+}
