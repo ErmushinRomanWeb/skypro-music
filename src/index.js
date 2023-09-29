@@ -11,6 +11,7 @@ const Global = createGlobalStyle`
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  border: 1px solid white;
 }
 
 *:before,

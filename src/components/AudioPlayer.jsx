@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Skeleton from "./Skeleton";
+import styled from "styled-components";
 
 function AudioPlayer() {
   const [visible, setVisible] = useState(false); //данным синтаксисом мы создаем 2 константы, которые соответствуют элементам в массиве(useState возвращает массив), причем, 2 будет объявление функции.

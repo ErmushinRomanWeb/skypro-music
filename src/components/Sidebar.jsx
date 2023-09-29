@@ -30,7 +30,7 @@ function Sidebar({ state }) {
       <div className="sidebar__personal">
         <p className="sidebar__personal-name">Ermushin Roman</p>
         <div className="sidebar__icon">
-          <svg alt="logout">
+          <svg className="logout-svg" alt="logout">
             <use xlinkHref="img/icon/sprite.svg#logout"></use>
           </svg>
         </div>
