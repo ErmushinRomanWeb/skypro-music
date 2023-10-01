@@ -1,6 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import Skeleton from "./Skeleton";
+import styled from "styled-components";
 
 function AudioPlayer() {
+  const [visible, setVisible] = useState(false); //данным синтаксисом мы создаем 2 константы, которые соответствуют элементам в массиве(useState возвращает массив), причем, 2 будет объявление функции.
+  setTimeout(() => {
+    setVisible(true); //
+  }, 3000);
+
+  //здесь, для того, чтобы нам можно было вставить значение в разметку мы можем активно использовать переменные, можно конечно перендерить всю разметку, но тогда будет очень много дублирующегося кода
+
+  let componentShown = visible ? (//!Тут мы просто засовываем в переменную 2 варианта, либо то, либо другое
+    <div className="track-play__contain">
+      <div className="track-play__image">
+        <svg className="track-play__svg" alt="music">
+          <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
+        </svg>
+      </div>
+      <div className="track-play__author">
+        <a className="track-play__author-link" href="http://">
+          Ты та...
+        </a>
+      </div>
+      <div className="track-play__album">
+        <a className="track-play__album-link" href="http://">
+          Баста
+        </a>
+      </div>
+    </div>
+  ) : (
+    <div className="track-play__contain">
+      <Skeleton className="track-play__image" width={51} height={51} />
+      <Skeleton className="track-play__author" width={59} height={15} />
+      <Skeleton className="track-play__album" width={59} height={15} />
+    </div>
+  );
   return (
     <div className="bar">
       <div className="bar__content">
@@ -36,24 +70,7 @@ function AudioPlayer() {
             </div>
 
             <div className="player__track-play track-play">
-              <div className="track-play__contain">
-                <div className="track-play__image">
-                  <svg className="track-play__svg" alt="music">
-                    <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
-                  </svg>
-                </div>
-                <div className="track-play__author">
-                  <a className="track-play__author-link" href="http://">
-                    Ты та...
-                  </a>
-                </div>
-                <div className="track-play__album">
-                  <a className="track-play__album-link" href="http://">
-                    Баста
-                  </a>
-                </div>
-              </div>
-
+              {componentShown}
               <div className="track-play__like-dis">
                 <div className="track-play__like _btn-icon">
                   <svg className="track-play__like-svg" alt="like">
