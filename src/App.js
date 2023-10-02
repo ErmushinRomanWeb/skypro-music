@@ -2,7 +2,7 @@ import React from "react";
 import NavMenu from "./components/NavMenu/NavMenu";
 import TrackList from "./components/TrackList";
 import Sidebar from "./components/Sidebar";
-import AudioPlayer from "./components/AudioPlayer";
+import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
 import styled from "styled-components";
 
 const StyledAppWrapper = styled.div`

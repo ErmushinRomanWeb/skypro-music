@@ -11,20 +11,24 @@ const Global = createGlobalStyle`
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  
   /* border: 1px solid white; */
 }
-
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+button,
+._btn {
+  cursor: pointer;
 }
 `;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Global/>
+    <Global />
     <App state={state} />
   </React.StrictMode>
 );
