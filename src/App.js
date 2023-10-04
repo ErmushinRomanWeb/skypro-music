@@ -1,51 +1,24 @@
 import React from "react";
 import NavMenu from "./components/NavMenu/NavMenu";
-import TrackList from "./components/TrackList";
-import Sidebar from "./components/Sidebar";
+import TrackList from "./components/TrackList/TrackList";
+import Sidebar from "./components/Sidebar/Sidebar";
 import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
-import styled from "styled-components";
+import { Route, Routes  } from "react-router-dom";
+import * as S from "./StyledApp"
 
-const StyledAppWrapper = styled.div`
-  width: 100%;
-  min-height: 100%;
-  overflow: hidden;
-  background-color: #383838;
-`;
-
-const StyledContainer = styled.div`
-  max-width: 1920px;
-  height: 100vh;
-  margin: 0 auto;
-  position: relative;
-  background-color: #181818;
-`;
-
-const StyledMain = styled.main`
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-`;
 //что такое
 function App({ state }) {
   return (
-    <StyledAppWrapper>
-      <StyledContainer>
-        <StyledMain>
+    <S.AppWrapper>
+      <S.Container>
+        <S.Main>
           <NavMenu />
           <TrackList />
           <Sidebar state={state} />
-        </StyledMain>
+        </S.Main>
         <AudioPlayer />
-      </StyledContainer>
-    </StyledAppWrapper>
+      </S.Container>
+    </S.AppWrapper>
   );
 }
 //!то есть логика в том, что мы просто заменяем все теги на компоненты, кторые заранее создали и отстилизовали

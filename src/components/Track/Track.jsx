@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Skeleton from "./Skeleton";
+import Skeleton from "../Skeleton";
+import * as S from "./StyledTrack";
 
 function Track() {
   const [visible, setVisible] = useState(false);
@@ -9,49 +10,51 @@ function Track() {
   }, 3000);
 
   let componentShown = !visible ? (
-    <div className="playlist__track track">
-      <div className="track__title">
-        <Skeleton
-          className="track__title-image track__title-image__skeleton"
-          width={51}
-          height={51}
-        />
+    <S.PlaylistTrack>
+      <S.TrackTitle>
+        <S.TrackTitleImageSkeleton>
+          <Skeleton width={51} height={51} />
+        </S.TrackTitleImageSkeleton>
         <Skeleton className="track__title-text" width={356} height={19} />
-      </div>
-      <Skeleton className="track__author" width={271} height={19} />
-      <Skeleton className="track__album" width={271} height={19} />
+      </S.TrackTitle>
+      <S.TrackAuthor>
+        <Skeleton width={271} height={19} />
+      </S.TrackAuthor>
+      <S.TrackAlbum>
+      <Skeleton width={271} height={19} />
+      </S.TrackAlbum>
       <div className="track__time">
-        <svg className="track__time-svg" alt="time">
+        <S.TrackTimeSvg alt="time">
           <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
-        </svg>
+        </S.TrackTimeSvg>
         <span className="track__time-text">4:44</span>
       </div>
-    </div>
+    </S.PlaylistTrack>
   ) : (
-    <div className="playlist__track track">
-      <div className="track__title">
-        <div className="track__title-image">
-          <svg className="track__title-svg" alt="music">
+    <S.PlaylistTrack>
+      <S.TrackTitle>
+        <S.TrackTitleImage>
+          <S.TrackTimeSvg alt="music">
             <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
-          </svg>
-        </div>
+          </S.TrackTimeSvg>
+        </S.TrackTitleImage>
         <div className="track__title-text">
-          <a className="track__title-link" href="http://">
+          <S.TrackTitleLink href="http://">
             Guilt <span className="track__title-span"></span>
-          </a>
+          </S.TrackTitleLink>
         </div>
-      </div>
-      <div className="track__author">
+      </S.TrackTitle>
+      <S.TrackAuthor>
         <a className="track__author-link" href="http://">
           Nero
         </a>
-      </div>
+      </S.TrackAuthor>
 
-      <div className="track__album">
+      <S.TrackAlbum>
         <a className="track__album-link" href="http://">
           Welcome Reality
         </a>
-      </div>
+      </S.TrackAlbum>
 
       <div className="track__time">
         <svg className="track__time-svg" alt="time">
@@ -59,7 +62,7 @@ function Track() {
         </svg>
         <span className="track__time-text">4:44</span>
       </div>
-    </div>
+    </S.PlaylistTrack>
   );
 
   return <div className="playlist__item">{componentShown}</div>;

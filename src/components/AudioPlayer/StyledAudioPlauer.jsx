@@ -202,10 +202,63 @@ export const TrackPlayLikeDis = styled.div`
 
 const likes = `
 padding: 5px;
-`
+`;
 
-export const TrackPlayLike = styled.div`${likes}`
-export const TrackPlayDisike = styled.div`${likes}`
+export const TrackPlayLike = styled.div`
+  ${likes}
+`;
+export const TrackPlayDisike = styled.div`
+  ${likes}
+`;
+
 export const TrackPlayLikeSvg = styled.svg`
-  
-`
+  fill: #696969;
+  stroke: #ffffff;
+  cursor: pointer;
+`;
+//! - Разобрать наследование стилей назх
+export const HoverAllButtons = styled.div`
+  cursor: pointer;
+  background: black;
+`;
+
+export const VolumeProgress = styled(HoverAllButtons)`
+  width: 109px;
+`;
+
+export const BarVolumeBlock = styled.div`
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 92px 0 0;
+`;
+
+export const VolumeContent = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+`;
+
+export const VolumeImage = styled.div`
+  width: 13px;
+  height: 18px;
+  margin-right: 17px;
+`;
+
+
+
+

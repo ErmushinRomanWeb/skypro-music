@@ -94,22 +94,22 @@ function AudioPlayer() {
               </S.TrackPlayLikeDis>
             </S.PlayerTrackPlay>
           </S.ParPlayer>
-          <div className="bar__volume-block volume">
-            <div className="volume__content">
-              <div className="volume__image">
+          <S.BarVolumeBlock /*className="bar__volume-block volume"*/>
+            <S.VolumeContent>
+              <S.VolumeImage>
                 <svg className="volume__svg" alt="volume">
                   <use xlinkHref="img/icon/sprite.svg#icon-volume"></use>
                 </svg>
-              </div>
-              <div className="volume__progress _btn">
+              </S.VolumeImage>
+              <S.VolumeProgress>
                 <input
                   className="volume__progress-line _btn"
                   type="range"
                   name="range"
                 />
-              </div>
-            </div>
-          </div>
+              </S.VolumeProgress>
+            </S.VolumeContent>
+          </S.BarVolumeBlock>
         </S.BarPlayerBlock>
       </S.BarContent>
     </S.Bar>
