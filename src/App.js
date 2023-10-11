@@ -13,6 +13,8 @@ function App({ state }) {
       <S.Container>
         <S.Main>
           <NavMenu />
+          <Routes>
+          </Routes>
           <TrackList />
           <Sidebar state={state} />
         </S.Main>
