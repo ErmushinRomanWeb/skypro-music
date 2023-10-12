@@ -7,7 +7,7 @@ import { StyledSidebarItem } from "../SidebarItem/StyledSidebarItem.jsx";
 
 // import * as S from "./StyledSidebar";
 
-function Sidebar({ state }) {
+function Sidebar({ cardImage }) {
   // всю логику мы прописываем до return
   const [visible, setVisible] = useState(false); //функция меняет локальный state компонента
   setTimeout(() => {
@@ -15,7 +15,7 @@ function Sidebar({ state }) {
     setVisible(true); //!Код не останавливается когда начинает считаться таймер
   }, 3000);
 
-  let componentShown = state.cardImage.map((element) => {
+  let componentShown = cardImage.map((element) => {
     return visible ? (
       <SidebarItem key={element.id} src={element.src} />
     ) : (
