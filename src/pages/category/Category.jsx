@@ -1,25 +1,25 @@
 import React from "react";
-import NavMenu from "../../components/NavMenu/NavMenu.jsx";
-import TrackList from "../../components/TrackList/TrackList.jsx";
-import Sidebar from "../../components/Sidebar/Sidebar.jsx";
-import AudioPlayer from "../../components/AudioPlayer/AudioPlayer.jsx";
-import * as S from "./StyledCategory.jsx";
+import { NavLink, useParams } from "react-router-dom";
 
+export const Category = () => {
+  const { id } = useParams();
 
-//что такое
-function Category({ cardImage }) {
-  return (
-      <S.AppWrapper>
-        <S.Container>
-          <S.Main>
-            <NavMenu />
-            <TrackList />
-            <Sidebar cardImage={cardImage} />
-          </S.Main>
-          <AudioPlayer />
-        </S.Container>
-      </S.AppWrapper>
-  );
-}
-//!то есть логика в том, что мы просто заменяем все теги на компоненты, кторые заранее создали и отстилизовали
-export default Category;
+  let category;
+
+  if (id === "1") {
+    category = <div>ПЛЕЙЛИСТ ДНЯ</div>;
+  } else if (id === "2") {
+    category = <div>100 ТАНЦЕВАЛЬНЫХ ХИТОВ</div>;
+  } else if (id === "3") {
+    category = <div>ИНДИ ЗАРЯД НА ОБУЧЕНИЕ</div>;
+  }
+
+  return(
+    <div style={{ backgroundColor: "black" }}>
+        {category}
+        <NavLink style={{color: 'red', textDecoration: 'none'}} to={'/'}> 
+            Вернуться на глваную
+        </NavLink>
+        </div>
+    ) 
+};

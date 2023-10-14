@@ -8,6 +8,7 @@ import * as S from "./StyledMainPage";
 
 //что такое
 function MainPage({ cardImage }) {
+  console.log(cardImage);
   return (
       <S.AppWrapper>
         <S.Container>

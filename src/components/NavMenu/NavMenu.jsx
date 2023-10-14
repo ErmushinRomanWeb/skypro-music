@@ -24,6 +24,4 @@ function NavMenu() {
       <S.NavMenu>{burger}</S.NavMenu>
     </S.MainNav>
   );
-}
-
-export default NavMenu;
+}export default NavMenu;

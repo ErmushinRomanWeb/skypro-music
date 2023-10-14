@@ -9,17 +9,19 @@ import { StyledSidebarItem } from "../SidebarItem/StyledSidebarItem.jsx";
 
 function Sidebar({ cardImage }) {
   // всю логику мы прописываем до return
-  const [visible, setVisible] = useState(false); //функция меняет локальный state компонента
+  const [visible, setVisible] = useState(false); //!мы импортируем функцию useState, которая принимает значение, и возвращает массив, в котором 0 элемент это значение, которое принимает функция, а 1 элемент это функция, которая принимает значение,
+  console.log(useState(false));
   setTimeout(() => {
     //!это асинхронная функция
-    setVisible(true); //!Код не останавливается когда начинает считаться таймер
+    setVisible(true); //!таймаут вызывает колбеком функцию, которая меняет значение компонента на true, при этом, эта функция работает асинхронно, что позволяет сначала отрисовать один компонент, а потом изменить значение переменной состояния и на основании этого отрисовать другой компонент.
   }, 3000);
 
-  let componentShown = cardImage.map((element) => {
+  let componentShown = cardImage.map((element) => {//!объявляем переменную и засовываем в нее компонент SidebarItem, пропсом в короый передаем 
+    console.log(element.id);
     return visible ? (
-      <SidebarItem key={element.id} src={element.src} />
+      <SidebarItem key={element.id} src={element.src} id={element.id} />
     ) : (
-      <StyledSidebarItem>
+      <StyledSidebarItem  >
         <Skeleton
           className="sidebar__item"
           width={250}
@@ -30,7 +32,6 @@ function Sidebar({ cardImage }) {
       </StyledSidebarItem>
     );
   });
-
   return (
     //после return у нас только разметка, то есть, то, что будет отображаться на странице
     <S.MainSidebar>
@@ -48,5 +49,4 @@ function Sidebar({ cardImage }) {
     </S.MainSidebar>
   );
 }
-
 export default Sidebar;
