@@ -3,14 +3,14 @@ import { useState } from "react";
 import MenuList from "../MenuList/MenuList";
 import * as S from "./StyledNavMenu";
 
-function NavMenu() {
+function NavMenu({changeStateLogin}) {
   const [open, setOpen] = useState(false);
   const toggleOpen = () => {
     setOpen(!open);
     console.log(open);
   };
 
-  let burger = open ? <MenuList /> : null;
+  let burger = open ? <MenuList changeStateLogin={changeStateLogin} /> : null;
   return (
     <S.MainNav>
       <S.NavLogo>

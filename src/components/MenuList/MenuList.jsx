@@ -12,10 +12,10 @@ function MenuList() {
         {/*уже испльзую в стилевой компоненте NavLink!!! */}
       </S.MenuItem>
       <S.MenuItem>
-        <S.MenuLink to="/my-play-list">Мой плейлист</S.MenuLink>
+        <S.MenuLink to="/favorites">Мой плейлист</S.MenuLink>
       </S.MenuItem>
       <S.MenuItem>
-        <S.MenuLink to="/login-page">{buttonName}</S.MenuLink>
+        <S.MenuLink onClick={localStorage.removeItem('name')} to="/login">{buttonName}</S.MenuLink>
       </S.MenuItem>
     </S.MenuList>
   );

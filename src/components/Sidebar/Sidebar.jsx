@@ -16,8 +16,7 @@ function Sidebar({ cardImage }) {
     setVisible(true); //!таймаут вызывает колбеком функцию, которая меняет значение компонента на true, при этом, эта функция работает асинхронно, что позволяет сначала отрисовать один компонент, а потом изменить значение переменной состояния и на основании этого отрисовать другой компонент.
   }, 3000);
 
-  let componentShown = cardImage.map((element) => {//!объявляем переменную и засовываем в нее компонент SidebarItem, пропсом в короый передаем 
-    console.log(element.id);
+  let componentShown = cardImage.map((element) => {//!в переменную засовываем результат изменения массива, в двнном примере мы берем из массива каждый элемент и меняем его на компонент, и на выходе получаем новый массив, который 
     return visible ? (
       <SidebarItem key={element.id} src={element.src} id={element.id} />
     ) : (
@@ -32,6 +31,7 @@ function Sidebar({ cardImage }) {
       </StyledSidebarItem>
     );
   });
+  console.log(componentShown);
   return (
     //после return у нас только разметка, то есть, то, что будет отображаться на странице
     <S.MainSidebar>
@@ -44,7 +44,7 @@ function Sidebar({ cardImage }) {
         </S.SidebarIcon>
       </S.SidebarPersonal>
       <S.SidebarBlock>
-        <S.SidebarList>{componentShown}</S.SidebarList>
+        <S.SidebarList>{[componentShown]}</S.SidebarList>
       </S.SidebarBlock>
     </S.MainSidebar>
   );

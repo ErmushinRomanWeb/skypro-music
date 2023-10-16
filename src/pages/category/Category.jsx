@@ -3,8 +3,8 @@ import { NavLink, useParams } from "react-router-dom";
 
 export const Category = () => {
   const { id } = useParams();
-
-  let category;
+console.log(useParams(3));
+  let category = 'ghbdtn';
 
   if (id === "1") {
     category = <div>ПЛЕЙЛИСТ ДНЯ</div>;

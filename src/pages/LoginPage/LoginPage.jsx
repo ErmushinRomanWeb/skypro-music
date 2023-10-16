@@ -6,10 +6,10 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const loginInLocal = () => {
-   return localStorage.setItem("name", "Roman");
+   return localStorage.setItem("name", "Roman");//! мы объявляем функцию, помещает в ls ключ и значение
   };
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <S.Wrapper>
       <S.ContainerEnter>
@@ -32,13 +32,18 @@ const LoginPage = () => {
               name="password"
               placeholder="Пароль"
             />
-              {/*ПЕРЕДЕЛАТЬ!!!!!!! */}
-              <S.ButtonEnter onClick={() => {loginInLocal(); navigate('/', { replace: false })}}>
-                {/* {console.log(localStorage.getItem('name'))} */}
-                Войти
-              </S.ButtonEnter>
+            {/*ПЕРЕДЕЛАТЬ!!!!!!! */}
+            <S.ButtonEnter
+              onClick={() => {
+                loginInLocal();//!тут мы вызываем функцию, и если пользователь не нажал кнопку, то ls пуст, а наличие в ls ключа и значения стоит в состоянии, и по дефолту 
+                navigate("/", { replace: false });
+              }}
+            >
+              {/* {console.log(localStorage.getItem('name'))} */}
+              Войти
+            </S.ButtonEnter>
             <S.ButtonSignup>
-              <NavLink to={"/registration-page"}>Зарегистрироваться</NavLink>
+              <NavLink to={"/register"}>Зарегистрироваться</NavLink>
             </S.ButtonSignup>
           </S.FormLogin>
         </S.ModalBlock>
