@@ -1,27 +1,10 @@
 import React from "react";
-import NavMenu from "./components/NavMenu/NavMenu";
-import TrackList from "./components/TrackList/TrackList";
-import Sidebar from "./components/Sidebar/Sidebar";
-import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
-import { Route, Routes  } from "react-router-dom";
-import * as S from "./StyledApp"
+import AppRouting from "./pages/routes";
 
-//что такое
 function App({ state }) {
+  //! по сути, мы просто работаем со значением переменной, которая неявно объявляется при получении параметра.
   return (
-    <S.AppWrapper>
-      <S.Container>
-        <S.Main>
-          <NavMenu />
-          <Routes>
-          </Routes>
-          <TrackList />
-          <Sidebar state={state} />
-        </S.Main>
-        <AudioPlayer />
-      </S.Container>
-    </S.AppWrapper>
+    <AppRouting state={state}/>
   );
 }
-//!то есть логика в том, что мы просто заменяем все теги на компоненты, кторые заранее создали и отстилизовали
 export default App;
