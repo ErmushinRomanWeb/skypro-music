@@ -5,6 +5,8 @@ function MenuList() {
   let page = window.location.href;
   console.log(page);
   let buttonName = page === "http://localhost:3000/" ? "Выйти" : "ЭТО БАГ!!!";
+  const handleLogoutClick = () => {
+    localStorage.removeItem('name');}
   return (
     <S.MenuList>
       <S.MenuItem >
@@ -15,7 +17,7 @@ function MenuList() {
         <S.MenuLink to="/favorites">Мой плейлист</S.MenuLink>
       </S.MenuItem>
       <S.MenuItem>
-        <S.MenuLink onClick={localStorage.removeItem('name')} to="/login">{buttonName}</S.MenuLink>
+        <S.MenuLink onClick={handleLogoutClick} to="/login">{buttonName}</S.MenuLink>
       </S.MenuItem>
     </S.MenuList>
   );
